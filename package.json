@@ -1,7 +1,7 @@
 {
-  "name": "react-jw-player",
-  "version": "1.4.0",
-  "description": "A React component for launching JW Player instances on the client.",
+  "name": "react-jw-player-with_sources",
+  "version": "1.0.0",
+  "description": "Fork of react-jw-player. A React component for launching JW Player instances on the client.",
   "main": "dist/react-jw-player.js",
   "scripts": {
     "build": "babel src --out-dir dist",
