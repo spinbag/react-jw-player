@@ -4,6 +4,7 @@ const propTypes = {
   aspectRatio: PropTypes.oneOf(['inherit', '1:1', '16:9']),
   className: PropTypes.string,
   file: PropTypes.string,
+  sources: PropTypes.array,
   image: PropTypes.string,
   onAdPlay: PropTypes.func,
   onAdResume: PropTypes.func,

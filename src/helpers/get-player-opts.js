@@ -7,6 +7,7 @@ function getPlayerOpts(opts) {
     isAutoPlay,
     isMuted,
     playlist,
+    sources,
   } = opts;
 
   const hasAdvertising = !!generatePrerollUrl;
@@ -17,6 +18,8 @@ function getPlayerOpts(opts) {
 
   if (playlist) {
     playerOpts.playlist = playlist;
+  } else if (sources && sources.length) {
+    playerOpts.sources = sources;
   } else if (file) {
     playerOpts.file = file;
   }
