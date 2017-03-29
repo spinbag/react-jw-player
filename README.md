@@ -21,7 +21,7 @@ This is a fork of react-jw-player with sources attribute added.
 ## Installation
 
 ```shell
-npm install react-jw-player
+npm install react-jw-player2
 ```
 
 ## Usage
