@@ -80,7 +80,7 @@ These are props that modify the basic behavior of the component.
   * Example: `https//content.jwplatform.com/feeds/abCD1234.json`
 * OR `sources`
   * Array of objects with file urls.
-  * Type: `string`
+  * Type: `array`
   * Example: `[{file: 'https://url.to/video/file.mp4'}]`
 
 ## Optional Configuration Props
