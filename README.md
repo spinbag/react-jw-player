@@ -283,9 +283,3 @@ ReactJWPlayerContainer.defaultProps = defaultProps;
 ReactJWPlayerContainer.displayName = displayName;
 export default ReactJWPlayerContainer;
 ```
-
-## Contributing
-
-**Just do it!**
-
-![shia](https://media.giphy.com/media/87xihBthJ1DkA/giphy.gif)
