@@ -1,15 +1,16 @@
 import React, { Component } from 'react';
 
 import createEventHandlers from './create-event-handlers';
-import getCurriedOnLoad from './helpers/get-curried-on-load';
 import getPlayerOpts from './helpers/get-player-opts';
 import initialize from './helpers/initialize';
-import installPlayerScript from './helpers/install-player-script';
 
 import defaultProps from './default-props';
 import propTypes from './prop-types';
 
 const displayName = 'ReactJWPlayer';
+
+import jquery from 'jquery';
+import jwplayer from './jwplayer.js';
 
 class ReactJWPlayer extends Component {
   constructor(props) {
@@ -20,28 +21,11 @@ class ReactJWPlayer extends Component {
       hasFired: {},
     };
     this.eventHandlers = createEventHandlers(this);
-    this.uniqueScriptId = 'jw-player-script';
+    window.jwplayer = jwplayer;
     this._initialize = this._initialize.bind(this);
   }
   componentDidMount() {
-    const isJWPlayerScriptLoaded = !!window.jwplayer;
-    if (isJWPlayerScriptLoaded) {
-      this._initialize();
-      return;
-    }
-
-    const existingScript = document.getElementById(this.uniqueScriptId);
-
-    if (!existingScript) {
-      installPlayerScript({
-        context: document,
-        onLoadCallback: this._initialize,
-        scriptSrc: this.props.playerScript,
-        uniqueScriptId: this.uniqueScriptId,
-      });
-    } else {
-      existingScript.onload = getCurriedOnLoad(existingScript, this._initialize);
-    }
+    this._initialize();
   }
   _initialize() {
     const component = this;
