@@ -23,6 +23,7 @@ const propTypes = {
   onAdPause: PropTypes.func,
   onPause: PropTypes.func,
   onVideoLoad: PropTypes.func,
+  playerScript: PropTypes.string.isRequired,
   onOneHundredPercent: PropTypes.func,
   onThreeSeconds: PropTypes.func,
   onTenSeconds: PropTypes.func,
