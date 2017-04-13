@@ -36,7 +36,7 @@ class ReactJWPlayer extends Component {
       installPlayerScript({
         context: document,
         onLoadCallback: this._initialize,
-        scriptSrc: this.props.playerScript,
+        scriptSrc: '../jwplayer/jwplayer.js',
         uniqueScriptId: this.uniqueScriptId,
       });
     } else {
