@@ -37,7 +37,6 @@ import ReactJWPlayer from 'react-jw-player';
 ReactDOM.render(
   <ReactJWPlayer
     playerId='my-unique-id'
-    playerScript='https://link-to-my-jw-player/script.js'
     playlist='https://link-to-my-playlist.json'
   />,
   document.getElementById('my-root-div');
@@ -53,7 +52,6 @@ import ReactJWPlayer from 'react-jw-player';
 ReactDOM.render(
   <ReactJWPlayer
     playerId='my-unique-id'
-    playerScript='https://link-to-my-jw-player/script.js'
     file='https://link-to-my-video.mp4'
   />,
   document.getElementById('my-root-div');
@@ -71,10 +69,6 @@ These are props that modify the basic behavior of the component.
   * A unique Id for the player instance. Used to distinguish the container divs.
   * Type: `string`
   * Example: `playerId="my-jw-player-instance"`
-* `playerScript`
-  * Link to a valid JW Player script.
-  * Type: `string`
-  * Example: `https://content.jwplatform.com/libraries/abCD1234.js`
 * `playlist` OR `file`
   * Link to a valid JW Player playlist or video file. Cool tip: JW Player automatically generates JSON feeds for individual videos if you use the video id in place of `abCD1234`. You can use this to get meta data on the videos without loading an actual playlist.
   * Type: `string`
@@ -238,7 +232,6 @@ const displayName = 'ReactJWPlayerContainer';
 
 const propTypes = {
   playlist: React.PropTypes.string.isRequired,
-  playerScript: React.PropTypes.string.isRequired
 };
 
 class ReactJWPlayerContainer extends React.Component {
@@ -272,7 +265,6 @@ class ReactJWPlayerContainer extends React.Component {
           onAdPlay={this.onAdPlay}
           onVideoLoad={this.onVideoLoad}
           playerId={this.playerId} // bring in the randomly generated playerId
-          playerScript='https://link-to-your-jw-player-script.js'
         />
       </div>
     );
