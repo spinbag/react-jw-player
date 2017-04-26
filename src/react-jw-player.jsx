@@ -31,9 +31,21 @@ class ReactJWPlayer extends Component {
     const component = this;
     const player = window.jwplayer(this.props.playerId);
     const playerOpts = getPlayerOpts(this.props);
-
+    this.setState({player: player});
     initialize({ component, player, playerOpts });
   }
+
+  componentWillReceiveProps(newProps){
+    let oldSources = getPlayerOpts(this.props).sources;
+    let newSources = getPlayerOpts(newProps).sources;
+    if ( JSON.stringify(oldSources) != JSON.stringify(newSources) ){
+      const component = this;
+      const player = this.state.player;
+      const playerOpts = getPlayerOpts(newProps);
+      initialize({ component, player, playerOpts })
+    }
+  }
+
   render() {
     return (
       <div className={this.props.className} id={this.props.playerId} />
